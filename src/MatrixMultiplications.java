@@ -3,7 +3,7 @@ public class MatrixMultiplications
 {
 	MatrixMultiplications(){}
 	
-	public int[][] multiply(int[][] A, int[][]B)
+	public double[][] multiply(double[][] A, double[][]B)
 	{
         int aRows = A.length;
         int aColumns = A[0].length;
@@ -14,10 +14,10 @@ public class MatrixMultiplications
             throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
         }
 
-        int[][] C = new int[aRows][bColumns];
+        double[][] C = new double[aRows][bColumns];
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
-                C[i][j] = 0;
+                C[i][j] = 0.0;
             }
         }
 
@@ -32,7 +32,7 @@ public class MatrixMultiplications
         return C;
 	}
 	
-	public void print(int[][] A)
+	public void print(double[][] A)
 	{
 		for(int i=0; i<A.length; i++)
 		{
@@ -45,4 +45,5 @@ public class MatrixMultiplications
 			System.out.println(row + "]");
 		}		
 	}
+
 }

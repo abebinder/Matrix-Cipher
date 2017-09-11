@@ -4,32 +4,9 @@ import java.util.Scanner;
  
 public class Inverse 
 {
-    public static void main(String argv[]) 
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the dimension of square matrix: ");
-        int n = input.nextInt();
-        double a[][]= new double[n][n];
-        System.out.println("Enter the elements of matrix: ");
-        for(int i=0; i<n; i++)
-            for(int j=0; j<n; j++)
-                a[i][j] = input.nextDouble();
+	public Inverse(){}
  
-        double d[][] = invert(a);
- 
-        System.out.println("The inverse is: ");
-        for (int i=0; i<n; ++i) 
-        {
-            for (int j=0; j<n; ++j)
-            {
-                System.out.print(d[i][j]+"  ");
-            }
-            System.out.println();
-        }
-        input.close();
-    }	
- 
-    public static double[][] invert(double a[][]) 
+    public double[][] invert(double a[][]) 
     {
         int n = a.length;
         double x[][] = new double[n][n];
@@ -64,10 +41,7 @@ public class Inverse
         }
         return x;
     }
- 
-// Method to carry out the partial-pivoting Gaussian
-// elimination.  Here index[] stores pivoting order.
- 
+
     public static void gaussian(double a[][], int index[]) 
     {
         int n = index.length;
