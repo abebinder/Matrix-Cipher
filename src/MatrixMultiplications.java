@@ -1,9 +1,9 @@
 
-public class MatrixOperations 
+public class MatrixMultiplications 
 {
-	MatrixOperations(){}
+	MatrixMultiplications(){}
 	
-	public Double[][] multiply(Double[][] A, Double[][]B)
+	public int[][] multiply(int[][] A, int[][]B)
 	{
         int aRows = A.length;
         int aColumns = A[0].length;
@@ -14,10 +14,10 @@ public class MatrixOperations
             throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
         }
 
-        Double[][] C = new Double[aRows][bColumns];
+        int[][] C = new int[aRows][bColumns];
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
-                C[i][j] = 0.00000;
+                C[i][j] = 0;
             }
         }
 
@@ -32,17 +32,17 @@ public class MatrixOperations
         return C;
 	}
 	
-	public void print(Double[][] A)
+	public void print(int[][] A)
 	{
 		for(int i=0; i<A.length; i++)
 		{
-			String row = "";
+			String row = "[";
 			
 			for(int j=0; j<A[0].length; j++)
 			{
-				row += A[i][j] ;
+				row += A[i][j] + " " ;
 			}
-			System.out.println(row);
+			System.out.println(row + "]");
 		}		
 	}
 }
