@@ -9,13 +9,17 @@ public class Main {
 		
 		double[][] C = calculator.multiply(A, B);
 		
-		calculator.print(A);
+		/*calculator.print(A);
 		System.out.println();
 		calculator.print(B);
 		System.out.println();
 		calculator.print(C);
 		double[][] D = inverseCalc.invert(B);
 		calculator.print(D);
+		System.out.println(calculator.charToDouble('a'));
+		*/
+		String test="abcdefg";
+		calculator.stringToDoubleArray(test);
 		
 	}
 
