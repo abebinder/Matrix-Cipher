@@ -7,6 +7,12 @@ public class MatrixMultiplications
 		double d=Character.getNumericValue(c);
 		return d-10;
 	}
+	public char doubleToChar(double d){
+		d=d+97;
+		int dAsinteger=(int)Math.round(d);
+		char c=(char)dAsinteger;
+		return c;
+	}
 
 	public String removeSpaces(String s){
 		return s.replaceAll("\\s", "");	

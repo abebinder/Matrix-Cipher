@@ -18,9 +18,10 @@ public class Main {
 		calculator.print(D);
 		System.out.println(calculator.charToDouble('a'));
 		*/
+		double d=0;
+		System.out.println(calculator.doubleToChar(d));
 		String test="abcdefg";
 		calculator.stringToDoubleArray(test);
-		
 	}
 
 }
