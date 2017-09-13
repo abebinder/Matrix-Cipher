@@ -4,24 +4,17 @@ public class Main {
 	{
 		MatrixMultiplications calculator = new MatrixMultiplications();
 		Inverse inverseCalc = new Inverse();
-		double[][] A = {{1,2,3},{4,5,6},{7,8,9}};
-		double[][] B = {{2,4,6},{1,3,5},{1,5,7}};
+		double[][] key ={{3,10,20},{20,9,17},{9,4,17}};
+		double[][] B = {{19, 0},{7, 0},{4, 0}};
 		
-		double[][] C = calculator.multiply(A, B);
+		String message = "theroostercrowsatdawn";
+		String encodedMessage = calculator.encode(message, key);
+		System.out.println(encodedMessage);
+		//double[][] C = calculator.multiply(key, B);
+		//System.out.println(calculator.modulo(207, 26));
 		
-		/*calculator.print(A);
-		System.out.println();
-		calculator.print(B);
-		System.out.println();
-		calculator.print(C);
-		double[][] D = inverseCalc.invert(B);
-		calculator.print(D);
-		System.out.println(calculator.charToDouble('a'));
-		*/
-		double d=0;
-		System.out.println(calculator.doubleToChar(d));
-		String test="abcdefg";
-		calculator.stringToDoubleArray(test);
+		//calculator.print(C);
+		
 	}
 
 }
