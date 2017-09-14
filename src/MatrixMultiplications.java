@@ -119,7 +119,13 @@ public class MatrixMultiplications
 	public String encode(String s, double[][] key){
 		double [][] message = stringToDoubleArray(s);
 		double[][] encodedMessage = multiply(key, message);
+		System.out.println("Encoded Matrix");
+		print(encodedMessage);
+		System.out.println("");
+		System.out.println("Encoded Matrix Mod 26");
 		encodedMessage = modEntireArray(encodedMessage);
+		print(encodedMessage);
+		System.out.println("");
 		String finalMessage = doubleArrayToString(encodedMessage);
 		
 		return finalMessage;
@@ -150,9 +156,14 @@ public class MatrixMultiplications
 		ModMatrix inverseMatrixKey = calculator.inverse(calculator);
 		BigInteger[][] inverseKey = inverseMatrixKey.getData();
 		double[][] finalInverseKey = bigIntegerToDoubleArray(inverseKey);
+		System.out.println("Modulo Inverse Key:");
+		print(finalInverseKey);
+		System.out.println("");
 		
 		double[][] decodedMessage = multiply(finalInverseKey,stringToDoubleArray(message));
 		decodedMessage=modEntireArray(decodedMessage);
+		System.out.println("Decoded  Message Mod 26:");
+		print(decodedMessage);
 		String answer = doubleArrayToString(decodedMessage);
 		return answer;
 	}
