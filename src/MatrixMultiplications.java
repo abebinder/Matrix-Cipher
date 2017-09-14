@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 
 public class MatrixMultiplications 
 {
@@ -124,7 +125,38 @@ public class MatrixMultiplications
 	}
 	
 	public String decode(String message, double[][] key){
+		BigInteger[][] matrixKey = doubleArrayToBigInteger(key);
+		ModMatrix calculator = new ModMatrix(matrixKey);
+		ModMatrix inverseMatrixKey = calculator.inverse(calculator);
+		BigInteger[][] inverseKey = inverseMatrixKey.getData();
+		double[][] finalInverseKey = bigIntegerToDoubleArray(inverseKey);
 		
-		double[][] inverseKey = 
+		double[][] decodedMessage = multiply(finalInverseKey,stringToDoubleArray(message));
+		decodedMessage=modEntireArray(decodedMessage);
+		String answer = doubleArrayToString(decodedMessage);
+		return answer;
 	}
+	
+    
+    public BigInteger[][] doubleArrayToBigInteger(double[][] array){
+    	BigInteger[][] bigInteger = new BigInteger[array.length][array[0].length];
+    	for(int i=0; i<array.length; i++){
+    		for(int j=0; j<array[0].length; j++){
+    			long longrounded = Math.round(array[i][j]);
+    			String rounded=Long.toString(longrounded);
+    			bigInteger[i][j]=new BigInteger(rounded);
+    		}
+    		}
+    	return bigInteger;
+    }
+    
+    public double[][] bigIntegerToDoubleArray(BigInteger[][] bigInteger){
+    	double[][] doubleArray = new double[bigInteger.length][bigInteger[0].length];
+    	for(int i=0; i<bigInteger.length; i++){
+    		for(int j=0; j<bigInteger[0].length; j++){
+    			doubleArray[i][j] = bigInteger[i][j].doubleValue();
+    		}
+    	}
+    	return doubleArray;
+    }
 }

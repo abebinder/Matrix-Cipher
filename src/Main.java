@@ -10,6 +10,10 @@ public class Main {
 		String message = "theroostercrowsatdawn";
 		String encodedMessage = calculator.encode(message, key);
 		System.out.println(encodedMessage);
+		String decodedMessage = calculator.decode(encodedMessage, key);
+		System.out.println(decodedMessage);
+
+		
 		//double[][] C = calculator.multiply(key, B);
 		//System.out.println(calculator.modulo(207, 26));
 		
