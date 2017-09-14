@@ -1,9 +1,29 @@
 import java.math.BigInteger;
+import java.text.BreakIterator;
 
 public class MatrixMultiplications 
 {
 	MatrixMultiplications(){}
 
+	
+	double[] parseStringToDoubleArray(String s){
+		String[]parts=s.split(" ");
+		double[]d=new double[parts.length];
+		for(int i=0; i<parts.length; i++){
+			d[i]=Double.parseDouble(parts[i]);
+		}
+		return d;
+	}
+	
+	public double[][] convertThreeStringsToKey(String r1, String r2, String r3){
+		double[]d1=parseStringToDoubleArray(r1);
+		double[]d2=parseStringToDoubleArray(r2);
+		double[]d3=parseStringToDoubleArray(r3);
+		double[][]key={d1, d2, d3};
+		return key;
+	}
+	
+	
 	public double modulo(double d, int m){
 		while(d>=m){
 			d=d-m;
